@@ -1,6 +1,19 @@
 import Footer from "../Footer";
-import Student from "./Student";
-function StudentList(){
+import Company from "./Company";
+import React, {useState, useEffect} from "react";
+import axios from "axios";
+function CompanyList(){
+    const [companys, setCompany] = useState([]);
+
+    useEffect(()=>{
+        axios.get("http://127.0.0.1:8000/api/company/get-all/")
+        .then(resp=>{
+            console.log(resp.data);
+            setCompany(resp.data);
+        }).catch(err=>{
+            console.log(err);
+        });
+    },[]);
     return(
         <div className="content-page">
             <div className="content">
@@ -32,7 +45,7 @@ function StudentList(){
                                         </a>
                                     </form>
                                 </div>
-                                <h4 className="page-title">Student List</h4>
+                                <h4 className="page-title">Company List</h4>
                             </div>
                         </div>
                     </div>
@@ -46,16 +59,21 @@ function StudentList(){
                                                     <tr>
                                                         <th>ID</th>
                                                         <th>Name</th>
-                                                        <th>CGPA</th>
-                                                        <th>Action</th>
+                                                        <th>LicenseNo</th>
+                                                        <th>Address</th>
+                                                        <th>Phone</th>
+                                                        <th>Email</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    
-                                                    <Student Id="17-35381-3" Name="Tanjimul Islam" Cgpa="3.51"></Student>
-                                                    <Student Id="17-35451-3" Name="Ahmed Borno" Cgpa="3.83"></Student>
-                                                    <Student Id="17-12345-2" Name="Abul Basar" Cgpa="2.50"></Student>
-                                                    <Student Id="18-40381-3" Name="Moidul Islam" Cgpa="3.01"></Student>
+
+                                                {
+                companys.map(company=>(
+                    
+                    <Company Key={company.id} Id={company.id} Name={company.name} LicenseNo={company.licenseNo} Address={company.address} Phone={company.phone} Email={company.email}></Company>
+                ))
+            }
+                                                   
                                                    
                                                 </tbody>
                                             </table>
@@ -74,4 +92,4 @@ function StudentList(){
     );
 }
 
-export default StudentList;
+export default CompanyList;

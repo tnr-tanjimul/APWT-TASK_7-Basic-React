@@ -1,11 +1,11 @@
 import LeftSideBar from "./Components/LeftSidebar";
 import Dashboard from "./Components/Pages/Dashboard";
-import StudentList from "./Components/Pages/StudentList";
 import RightSidebar from "./Components/RightSidebar";
 import TopBar from "./Components/TopBar";
 import { BrowserRouter as Router, Route, Switch,useParams } from 'react-router-dom'
 import StudentDetails from "./Components/Pages/StudentDetails";
 import Contact from "./Components/Pages/Contact";
+import CompanyList from "./Components/Pages/CompanyList";
 function AppMain() {
     return (
         <Router>
@@ -21,8 +21,8 @@ function AppMain() {
                         <Route exact path="/">
                             <Dashboard></Dashboard>
                         </Route>
-                        <Route exact path="/student-list">
-                            <StudentList></StudentList>
+                        <Route exact path="/company-list">
+                            <CompanyList></CompanyList>
                         </Route>
 
                         <Route exact path="/student/:id">

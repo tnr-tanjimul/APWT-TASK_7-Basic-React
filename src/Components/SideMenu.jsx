@@ -19,9 +19,9 @@ function SideMenu() {
 
 
                 <li className="menuitem-active">
-                    <Link to="/student-list" className="active">
+                    <Link to="/company-list" className="active">
                         <i className="mdi mdi-view-dashboard-outline"></i>
-                        <span> Students </span>
+                        <span> Company </span>
                     </Link>
                 </li>
 

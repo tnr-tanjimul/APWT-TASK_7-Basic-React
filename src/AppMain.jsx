@@ -3,9 +3,10 @@ import Dashboard from "./Components/Pages/Dashboard";
 import RightSidebar from "./Components/RightSidebar";
 import TopBar from "./Components/TopBar";
 import { BrowserRouter as Router, Route, Switch,useParams } from 'react-router-dom'
-import StudentDetails from "./Components/Pages/StudentDetails";
+
 import Contact from "./Components/Pages/Contact";
 import CompanyList from "./Components/Pages/CompanyList";
+import CompanyDetails from "./Components/Pages/CompanyDetails";
 function AppMain() {
     return (
         <Router>
@@ -25,8 +26,8 @@ function AppMain() {
                             <CompanyList></CompanyList>
                         </Route>
 
-                        <Route exact path="/student/:id">
-                            <StudentDetails/>
+                        <Route exact path="/company/:id">
+                            <CompanyDetails></CompanyDetails>
                         </Route>
 
                         <Route exact path="/contact">

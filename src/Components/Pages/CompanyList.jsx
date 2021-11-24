@@ -63,6 +63,10 @@ function CompanyList(){
                                                         <th>Address</th>
                                                         <th>Phone</th>
                                                         <th>Email</th>
+                                                        <th>
+
+                                                            Action
+                                                        </th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>

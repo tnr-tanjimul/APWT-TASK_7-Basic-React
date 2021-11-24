@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 function Company(_tan) {
     return (
         <tr>
@@ -9,7 +9,7 @@ function Company(_tan) {
             <td>{_tan.Phone}</td>
             <td>{_tan.Email}</td>
             
-            
+            <Link to={"company/"+_tan.Id}>View</Link>
         </tr>
     );
 }

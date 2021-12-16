@@ -1,8 +1,15 @@
 import Footer from "../Footer";
+import LeftSideBar from "../LeftSidebar";
+import RightSidebar from "../RightSidebar";
+import TopBar from "../TopBar";
 import DashItem from "./DashItem";
 
 function Dashboard() {
     return (
+    <>
+    <div id="wrapper">
+        <TopBar></TopBar>
+        <LeftSideBar></LeftSideBar>
         <div className="content-page">
             <div className="content">
 
@@ -61,6 +68,11 @@ function Dashboard() {
 
 
         </div>
+
+        </div>
+        <RightSidebar></RightSidebar>
+        <div className="rightbar-overlay"></div>
+        </>
 
     );
 }

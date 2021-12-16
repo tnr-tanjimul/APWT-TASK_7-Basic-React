@@ -7,40 +7,83 @@ import { BrowserRouter as Router, Route, Switch,useParams } from 'react-router-d
 import Contact from "./Components/Pages/Contact";
 import CompanyList from "./Components/Pages/CompanyList";
 import CompanyDetails from "./Components/Pages/CompanyDetails";
+import HostspotLog from "./Components/Pages/HotspotLog";
+import AuthLogin from "./Components/Auth/AuthLogin";
+import AuthRegistration from "./Components/Auth/AuthRegistration";
 function AppMain() {
     return (
         <Router>
             <>
                 {/* Begin page */}
-                <div id="wrapper">
-                    <TopBar></TopBar>
-                    <LeftSideBar></LeftSideBar>
+                
                     
 
 
                     <Switch>
                         <Route exact path="/">
-                            <Dashboard></Dashboard>
+                                <Dashboard></Dashboard>
                         </Route>
                         <Route exact path="/company-list">
-                            <CompanyList></CompanyList>
+                            <div id="wrapper">
+                                <TopBar></TopBar>
+                                <LeftSideBar></LeftSideBar>
+                                <CompanyList></CompanyList>
+                            </div>
+                            <RightSidebar></RightSidebar>
+                            <div className="rightbar-overlay"></div>
+                            
+                        </Route>
+
+                        <Route exact path="/hotspot/log">
+                            <div id="wrapper">
+                                <TopBar></TopBar>
+                                <LeftSideBar></LeftSideBar>
+                                <HostspotLog></HostspotLog>
+                            </div>
+                            <RightSidebar></RightSidebar>
+                            <div className="rightbar-overlay"></div>
+                            
                         </Route>
 
                         <Route exact path="/company/:id">
-                            <CompanyDetails></CompanyDetails>
+                            <div id="wrapper">
+                                <TopBar></TopBar>
+                                <LeftSideBar></LeftSideBar>
+                                <CompanyDetails></CompanyDetails>
+                            </div>
+                            <RightSidebar></RightSidebar>
+                            <div className="rightbar-overlay"></div>
+                            
                         </Route>
 
+                      
+
                         <Route exact path="/contact">
-                            <Contact></Contact>
+                            <div id="wrapper">
+                                <TopBar></TopBar>
+                                <LeftSideBar></LeftSideBar>
+                                <Contact></Contact>
+                            </div>
+                            <RightSidebar></RightSidebar>
+                            <div className="rightbar-overlay"></div>
+                            
                         </Route>
+
+                        <Route exact path="/login">
+                            <AuthLogin></AuthLogin>
+                        </Route>
+
+
+                        <Route exact path="/register">
+                            <AuthRegistration></AuthRegistration>
+                        </Route>
+
+
                     </Switch>
 
 
 
-                </div>
-
-                <RightSidebar></RightSidebar>
-                <div className="rightbar-overlay"></div>
+                
                 {/* END wrapper */}
             </>
         </Router>
